@@ -1,5 +1,5 @@
 // fetch Madlibz API
-fetch("http://madlibz.herokuapp.com/api/random?minlength=5&maxlength=25", {
+fetch("https://madlibz.herokuapp.com/api/random?minlength=5&maxlength=25", {
     method: 'GET', //GET is the default. //where do these options come from?
     credentials: 'same-origin', // include, *same-origin, omit
     redirect: 'follow', // manual, *follow, error
