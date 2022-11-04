@@ -5,7 +5,9 @@ fetch("http://madlibz.herokuapp.com/api/random?minlength=5&maxlength=25", {
     redirect: 'follow', // manual, *follow, error
   })
   .then((response) => response.json())
-  .then((data) => console.log(data));
+  .then((response) => console.log(response))
+  .catch(err => console.error(err));
+
   
 // fetch Word API
   const options = {
