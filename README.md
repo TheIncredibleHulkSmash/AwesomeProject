@@ -1,10 +1,7 @@
 # RandomMadlib
 Bootcamp Project 1
 
-I enjoy JavaScript because it utilizes both Functional programming and Object-oriented programming.
-
 ## User Story
-
 
 As a person who likes dynamic play, 
 I want to create a Madlib story, 
