@@ -20,6 +20,8 @@ const displayMadlib = async (url) => {
   document.querySelector(".madlibText").textContent += "."; //add period at the end of madlib
 };
 
+displayMadlib(api_url);
+
 // fetch Madlibz API
 // fetch(api_url, {
 //   method: "GET", //GET is the default. //where do these options come from?

@@ -15,6 +15,29 @@
   </head>
   <body>
     <header>
+      <div class="top-bar">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">Site Title</li>
+            <li>
+              <a href="#">One</a>
+              <!-- <ul class="menu vertical">
+                <li><a href="#">One</a></li>
+                <li><a href="#">Two</a></li>
+                <li><a href="#">Three</a></li>
+              </ul> -->
+            </li>
+            <li><a href="#">Two</a></li>
+            <li><a href="#">Three</a></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <li><input type="search" placeholder="Search" /></li>
+            <li><button type="button" class="button">Search</button></li>
+          </ul>
+        </div>
+      </div>
       <h1>This is our header with some <small>small text</small></h1>
     </header>
     <main>
@@ -27,19 +50,25 @@
         <div class="media-object-section">
           <h4>Welcome to our Madlib Page</h4>
           <p>Here is how you play our game.</p>
+          <button class="button large expanded">Make my own MadLib</button>
         </div>
       </div>
-      <div>
-        <div class="madlibTitle"></div>
-        <div class="madlibText"></div>
+      <div class="card">
+        <div class="madlibTitle card-divider text"></div>
+        <div class="madlibText card-section"></div>
       </div>
     </main>
     <footer></footer>
-    <script src="./assets/js/script.js"></script>
-    <!--JS file for Foundation CSS framework-->
-    <!-- <script
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+      integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Compressed JavaScript -->
+    <script
       src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"
       crossorigin="anonymous"
-    ></script> -->
+    ></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
