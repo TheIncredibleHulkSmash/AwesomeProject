@@ -1,13 +1,11 @@
 // fetch Madlibz API
-fetch("https://madlibz.herokuapp.com/api/random?minlength=5&maxlength=25", {
+fetch("http://madlibz.herokuapp.com/api/random?minlength=5&maxlength=25", {
     method: 'GET', //GET is the default. //where do these options come from?
     credentials: 'same-origin', // include, *same-origin, omit
     redirect: 'follow', // manual, *follow, error
   })
   .then((response) => response.json())
-  .then((response) => console.log(response))
-  .catch(err => console.error(err));
-
+  .then((data) => console.log(data));
   
 // fetch Word API
   const options = {
