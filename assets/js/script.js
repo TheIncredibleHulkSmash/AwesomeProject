@@ -1,5 +1,5 @@
 const api_url =
-  "http://madlibz.herokuapp.com/api/random?minlength=5&maxlength=25";
+  "https://madlibz.herokuapp.com/api/random?minlength=5&maxlength=25";
 
 const displayMadlib = async (url) => {
   const response = await fetch(url); //store response
