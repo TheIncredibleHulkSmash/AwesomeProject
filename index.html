@@ -14,47 +14,34 @@
     />
   </head>
   <body>
-    <header>
-      <div class="top-bar">
-        <div class="top-bar-left">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <li class="menu-text">Site Title</li>
-            <li>
-              <a href="#">One</a>
-              <!-- <ul class="menu vertical">
-                <li><a href="#">One</a></li>
-                <li><a href="#">Two</a></li>
-                <li><a href="#">Three</a></li>
-              </ul> -->
-            </li>
-            <li><a href="#">Two</a></li>
-            <li><a href="#">Three</a></li>
-          </ul>
-        </div>
-        <div class="top-bar-right">
-          <ul class="menu">
-            <li><input type="search" placeholder="Search" /></li>
-            <li><button type="button" class="button">Search</button></li>
-          </ul>
-        </div>
-      </div>
-      <h1>This is our header with some <small>small text</small></h1>
-    </header>
     <main>
-      <div class="media-object">
+      <div class="media-object align-center">
         <div class="media-object-section">
           <div id="logo" class="thumbnail">
             <img src="./assets/img/MadlibLogo.webp" />
           </div>
         </div>
-        <div class="media-object-section">
-          <h4>Welcome to our Madlib Page</h4>
-          <p>Here is how you play our game.</p>
-          <button class="button large expanded">Make my own MadLib</button>
-        </div>
+      </div>
+      <div class="align-center text-center">
+        <h4>Welcome to Madlibs!</h4>
+        <p>Ready to help create a fun, silly story? Madlibs is a word game designed to create interesting tales with your help.</p>
+        <p>First, we'll ask you for a series of adjectives, nouns, body parts, and other categories of words. Feel free to get as creative as you want - the more random the better!</p>
+        <p>After that, using the words you provided, we'll show you a story! It's quick, it's fun, and an easy way to get some laughs in. Are you ready to Madlib?</p>
+  
+          <button class="button large" id="buttonStart">Make my own MadLib</button>
+     
+        
+      </div>
+
+      <!-- blanks containing inputs to enter into story -->
+      <div class="container">
+        <ul id="inputs">
+          </ul>
       </div>
       <div class="card">
+        <!-- Story titles -->
         <div class="madlibTitle card-divider text"></div>
+        <!-- Story text -->
         <div class="madlibText card-section"></div>
       </div>
     </main>

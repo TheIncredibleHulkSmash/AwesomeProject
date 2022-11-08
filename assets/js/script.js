@@ -14,13 +14,32 @@ const displayMadlib = async (url) => {
     const value = data.value[i];
     console.log(value);
     console.log(blank);
-    document.querySelector(".madlibText").textContent +=
-      value + "" + blank + "";
+    document.querySelector(".madlibText").innerHTML +=
+      `${value} <b>${blank}</b>`;
   }
-  document.querySelector(".madlibText").textContent += "."; //add period at the end of madlib
+  //document.querySelector(".madlibText").textContent += "."; //add period at the end of madlib
+
+const inputs = document.querySelector("#inputs")
+
+  for (let i = 0; i < data.blanks.length; i++) {
+    const blank = data.blanks[i];
+    const li = document.createElement("li");
+    const input = document.createElement("input");
+    input.setAttribute("id",`blank-${i}`);
+    const text = document.createTextNode(blank); //creating text value
+    li.append(text)
+    li.append(input);
+
+    inputs.append(li)//appending to ul tag
+  }
 };
 
-displayMadlib(api_url);
+const buttonStart = document.querySelector("#buttonStart");
+
+buttonStart.addEventListener("click",()=>{
+  displayMadlib(api_url);
+  buttonStart.style.visibility = "hidden"
+})
 
 // fetch Madlibz API
 // fetch(api_url, {
