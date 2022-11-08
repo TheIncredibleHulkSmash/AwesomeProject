@@ -4,10 +4,13 @@ const api_url =
 const buttonSubmit = document.querySelector("#buttonSubmit");
 buttonSubmit.style.visibility = "hidden";
 
+document.getElementById("button").style.display = "none";
+
 let wordCloudText = "";
 let completedBlanks = [];
 
-let showWordCloud = () => {
+//word cloud
+let showWordCloud = (id) => {
   wordCloudText = localStorage.getItem("savedBlanks"); //get updated string of blanks to display as a word cloud
   // fetch word cloud API using wordCloudText
   fetch("https://textvis-word-cloud-v1.p.rapidapi.com/v1/textToCloud", {
@@ -34,10 +37,10 @@ let showWordCloud = () => {
       return response.text();
     })
     .then((wordCloud) => {
-      var img = document.getElementById("wordCloud");
+      var img = document.getElementById(id);
       img.src = wordCloud;
-      img.height = 800;
-      img.width = 800;
+      img.height = 600;
+      img.width = 600;
     })
     .catch((err) => {
       console.log(err);
@@ -48,7 +51,7 @@ const displayMadlib = async (url) => {
   const response = await fetch(url); //store response
   let data = await response.json(); //convert response to JSON
   console.log(data);
-
+  showWordCloud("wordCloud");
   const inputs = document.querySelector("#inputs");
   //loops through blanks to create input boxes
   for (let i = 0; i < data.blanks.length; i++) {
@@ -62,22 +65,27 @@ const displayMadlib = async (url) => {
     inputs.append(li); //appending to ul tag
   }
 
-  showWordCloud();
+
 
   //on click submit button code
   buttonSubmit.style.visibility = "visible"; //sjpw submit button after start button has been clicked
   buttonSubmit.addEventListener("click", () => {
     //store each input into completedBlanks array
+    document.getElementById("top").style.display = "none";
+    document.getElementById("button").style.display = "block";
     for (let i = 0; i < data.blanks.length; i++) {
       let completedBlank = document.getElementById(`blank-${i}`).value;
       completedBlanks.push(completedBlank);
     }
+    document.getElementById(`inputs`).style.display = "none"
     let completedBlanksString = completedBlanks.join(" "); //convert array to string
     let savedBlanks = localStorage.getItem("savedBlanks"); //pull previously saved blanks
     savedBlanks += completedBlanksString; //append saved blanks with words inputted for this madlib
     localStorage.setItem("savedBlanks", savedBlanks); //save updated save blanks in local storage
-
-    document.querySelector(".madlibTitle").innerHTML = `<h3>${data.title}</h3>`; //display title of madlib
+    showWordCloud("wordCloud1");
+    const madTitle = document.querySelector(".madlibTitle")
+    madTitle.innerHTML = `<h3>${data.title}</h3>`; //display title of madlib
+    madTitle.classList.add("card-divider")
     //loop through blanks and values to display a string with the completed madlib
     for (let i = 0; i < data.blanks.length; i++) {
       const blank = data.blanks[i];
@@ -96,5 +104,5 @@ const displayMadlib = async (url) => {
 const buttonStart = document.querySelector("#buttonStart");
 buttonStart.addEventListener("click", () => {
   displayMadlib(api_url);
-  buttonStart.style.visibility = "hidden";
+  buttonStart.style.display = "none";
 });

@@ -45,17 +45,34 @@
       </div>
 
       <!-- blanks containing inputs to enter into story -->
-      <div class="container">
-        <ul id="inputs"></ul>
+      <div  id="top">
+        <div class="container row">
+          <div class="columns small-6">
+            <ul id="inputs"></ul>
+          </div>
+          <div class="columns small-6">
+          <img id="wordCloud" />
+        </div>
+        </div>
         <button class="button large" id="buttonSubmit">Submit</button>
-        <img id="wordCloud" />
       </div>
-      <div class="card">
-        <!-- Story titles -->
-        <div class="madlibTitle card-divider text"></div>
-        <!-- Story text -->
-        <div class="madlibText card-section"></div>
+
+      <div id="button">
+      <div class="container row">
+        <div id="card" class="card">
+          <!-- Story titles -->
+          <div class="madlibTitle text card-divider"></div>
+          <!-- Story text -->
+          <div class="madlibText card-section"></div>
+        </div>
+        <div class="columns small-6 minContainer">
+          <img id="wordCloud1" /></div>
       </div>
+      <div class="container buttonRow">
+        <button class="button large" id="buttonRestart">Go to Homepage</button>
+        <button class="button large" id="buttonStartAgain">Restart Again</button>
+      </div>
+    </div>
     </main>
     <footer></footer>
     <script
