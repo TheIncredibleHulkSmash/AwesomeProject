@@ -94,30 +94,3 @@ buttonStart.addEventListener("click", () => {
   displayMadlib(api_url);
   buttonStart.style.visibility = "hidden";
 });
-
-console.log(wordCloudText);
-
-// fetch Madlibz API
-// fetch(api_url, {
-//   method: "GET", //GET is the default. //where do these options come from?
-//   credentials: "same-origin", // include, *same-origin, omit
-//   redirect: "follow", // manual, *follow, error
-// })
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-//   });
-
-// fetch Word API
-// const options = {
-//   method: "GET",
-//   headers: {
-//     "X-RapidAPI-Key": "1489b563d6msh890ebba4b5cef06p192944jsn4ee65a8efff3",
-//     "X-RapidAPI-Host": "wordsapiv1.p.rapidapi.com",
-//   },
-// };
-
-// fetch("https://wordsapiv1.p.rapidapi.com/words/mouse", options)
-//   .then((response) => response.json())
-//   .then((response) => console.log(response))
-//   .catch((err) => console.error(err));
