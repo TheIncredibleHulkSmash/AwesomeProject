@@ -6,3 +6,22 @@
   width: 50vw;
 }
 
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.minContainer {
+  min-width: 50%;
+}
+
+#inputBox {
+  text-align: center;
+}

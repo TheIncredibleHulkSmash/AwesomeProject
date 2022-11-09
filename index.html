@@ -22,7 +22,7 @@
           </div>
         </div>
       </div>
-      <div class="align-center text-center">
+      <div id="welcomeBox" class="align-center text-center">
         <h4>Welcome to Madlibs!</h4>
         <p>
           Ready to help create a fun, silly story? Madlibs is a word game
@@ -45,34 +45,36 @@
       </div>
 
       <!-- blanks containing inputs to enter into story -->
-      <div  id="top">
+      <div id="inputBox">
         <div class="container row">
           <div class="columns small-6">
             <ul id="inputs"></ul>
           </div>
           <div class="columns small-6">
-          <img id="wordCloud" />
-        </div>
+            <img id="wordCloud" />
+          </div>
         </div>
         <button class="button large" id="buttonSubmit">Submit</button>
       </div>
 
-      <div id="button">
-      <div class="container row">
-        <div id="card" class="card">
-          <!-- Story titles -->
-          <div class="madlibTitle text card-divider"></div>
-          <!-- Story text -->
-          <div class="madlibText card-section"></div>
+      <div id="completedMadlibBox">
+        <div class="container row">
+          <div id="card" class="card">
+            <!-- Story titles -->
+            <div class="madlibTitle text card-divider"></div>
+            <!-- Story text -->
+            <div class="madlibText card-section"></div>
+          </div>
+          <!-- <div class="columns small-6 minContainer">
+          <img id="wordCloud1" /></div> -->
         </div>
-        <div class="columns small-6 minContainer">
-          <img id="wordCloud1" /></div>
+        <div class="container buttonRow">
+          <button class="button large" id="buttonHomepage">
+            Go to Homepage
+          </button>
+          <button class="button large" id="buttonRestart">Restart Again</button>
+        </div>
       </div>
-      <div class="container buttonRow">
-        <button class="button large" id="buttonRestart">Go to Homepage</button>
-        <button class="button large" id="buttonStartAgain">Restart Again</button>
-      </div>
-    </div>
     </main>
     <footer></footer>
     <script
