@@ -1,38 +1,77 @@
-# RandomMadlib
-Bootcamp Project 1
+# <Your-Project-Title>
 
-## User Story
+## Description
 
-As a person who likes dynamic play, 
-I want to create a Madlib story, 
-So that I can be entertained and enjoy a funny, mysterious story.
+Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
-## Acceptance Criteria
+- What was your motivation?
+The motivation for the Madlibs game is to provide the user with some slight relaxation and fun. We designed a game that targets an audience that wants to explore creativity by playing a madlib game alone, but this game also provides a visually appeasing experience that the user can enjoy as well. We wanted to shy about from boring and add a little fun to an every day routine. The Madlib game we craeted is both fun and creative. It can even be used as an ice breaker in a rather awkard meeting or orientation, maybe even in the classroom! The possibilities are many. It can be a fun little break time exercise to do on your own or to be enjoyed with friends and colleagues.
 
-Given that I need to entertain myself with a little fun
-When I load the page 
-Then I am presented with instructions on how to play the game.
+- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
+This project was built because we wanted to add a twist of freshness and uniqueness to a game that is creative and we wanted to make this fun experience even more appeasing. A madlib has its twists and turns and the story is shaped based on what the user decides for it to be. It is not be taken serious but is rather aimed to be enjoyed while relaxing or for some down time. The options are there for those who want to experiment with words game and have a little but of silly fun.
 
-When I click on the start button
-Then I am asked to fill in a word of a certain category.
+- What problem does it solve?
+The Madlib game aims to provide a dynamic experience. It's purpose lies in entertaining its users and carrying them through a fun journey where word-play and mysterie lead to an unexpected outcome that it is sure to surprise and perhaps even provide some laughter and silly fun. The dynamic usage of the words the user chooses to fill in the categories, is then generated into a story that is shaped based on both the mysterie, and the display of the finished product. This is what makes this game fun. You never know what you are going to get. 
 
-When I am asked to fill in a word of a certain category
-Then I am given a suggestion of that category
+- What did you learn?
+During this learning experience it is important to mention how the resources available can make, break, and change a project depending on what is trying to be accomplished. Good organization plays a role in figuring out tasks, responsibilties within and executing functionality. Having a fully functional product is the game's goal, while also inviting the user into a uniqe experience that can be repeated sas many times as they please. Having the right data and the resources that work best to meet the overall objective was key in the making of this Madlib game.
 
-When a suggestion of a category is shown
-Then I can click on a button to get another randomized suggestion
 
-When I input a word to the textbox
-Then the response is saved and the next response will follow
+## Table of Contents (Optional)
 
-When all responses are chosen 
-Then the Madlib with all the responses chosen will appear on the page as the end result.
+If your README is long, add a table of contents to make it easy for users to find what they need.
 
-When the game is over
-Then the story is saved by pressing a save button.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-When the game is over
-Then a restart button appears
+## Installation
 
-When I want to view a previous story,
-Then I can access saved data to view previously completed stories.
+What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+
+## Usage
+
+Provide instructions and examples for use. Include screenshots as needed.
+
+To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+
+![alt text](assets/images/screenshot.png)
+
+## Credits
+
+List your collaborators, if any, with links to their GitHub profiles.
+
+Charles Kim
+https://github.com/ckim812
+
+Jazmin Tweedle
+https://github.com/jtweedle1
+
+Jaya Singh
+https://github.com/jaya4ever
+
+Fiama Rodriguez-Gaitan
+https://github.com/flgaitan
+
+If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+
+If you followed tutorials, include links to those here as well.
+
+## License
+
+(BASED ON PROJCT CONTENT)
+The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+
+---
+
+🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+
+
+## Features
+
+
+## How to Contribute
+
+If you created an application or package and would like other developers to contribute to it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+
