@@ -8,16 +8,15 @@ document.getElementById("completedMadlibBox").style.display = "none";
 
 let wordCloudText = "";
 let completedBlanks = [];
-let localStorageStory = [];
 let playCount = localStorage.length ++;
   
-  //save completed Madlib to local storage
-let archiveStory = (number) => {
-  let savedStory = [];
-  savedStory[0] = document.querySelector(".madlibTitle").textContent;
-  savedStory[1] = document.querySelector(".madlibText").textContent;
-  localStorage.setItem(`savestory${number}`, savedStory);
-  localStorageStory = localStorage.getItem(`savestory${number}`, savedStory);
+//save completed Madlib to local storage
+let archiveStory = () => {
+  let savedStory = {title:"",content:""}; //store title and finished story content; is a string
+  savedStory.title = document.querySelector(".madlibTitle").textContent; //getting the title content
+  savedStory.content = document.querySelector(".madlibText").textContent; //getting the story content
+  let playCount = localStorage.length //number of data available in localStorage that has already been stored
+  localStorage.setItem(`savestory${playCount-1}`, JSON.stringify(savedStory)); //saving new story; -1 because since we are storing the blanks, we need to ignore that piece of data 
 };
 
 const displayMadlib = async (url) => {
@@ -63,7 +62,6 @@ const displayMadlib = async (url) => {
     //display completed madlib
     const madTitle = document.querySelector(".madlibTitle");
     madTitle.innerHTML = `<h3>${data.title}</h3>`; //display title of madlib
-    madTitle.classList.add("card-divider");
     //loop through blanks and values to display a string with the completed madlib
     for (let i = 0; i < data.blanks.length; i++) {
       const blank = data.blanks[i];
@@ -93,7 +91,7 @@ let showWordCloud = (id) => {
       accept: "application/json",
     },
     body: JSON.stringify({
-      text: wordCloudText,
+      text: wordCloudText?wordCloudText:"animal man run let talk beautiful dance", //ternary operator -> if there is no data, execute after ?; if there is data, display worldCloudText
       scale: 1,
       width: 800,
       height: 800,
@@ -108,6 +106,7 @@ let showWordCloud = (id) => {
       return response.text();
     })
     .then((wordCloud) => {
+      console.log(wordCloud);
       var img = document.getElementById(id);
       img.src = wordCloud;
       img.height = 600;
@@ -128,7 +127,7 @@ buttonStart.addEventListener("click", () => {
 const buttonHomepage = document.getElementById("buttonHomepage");
 buttonHomepage.addEventListener("click", () => {
   console.log("homepage button click working");
-  document.getElementById("welcomeBox").style.display = "visible";
+  document.getElementById("welcomeBox").style.display = "block";
   document.getElementById("completedMadlibBox").style.display = "none";
 });
 
@@ -139,3 +138,18 @@ buttonRestart.addEventListener("click", () => {
   // buttonRestart.style.display = "none";
   // buttonHomepage.style.display = "none";
 });
+
+const showStoryButton = document.getElementById("showStory") //selecting showStory button in HTML
+const showArchives = document.querySelector(".showArchives"); //empty div where we're displaying the previously played story titles and links
+
+showStoryButton.addEventListener("click",()=>{
+  let numberOfStories = localStorage.length; //getting number of stories already available in local Storage
+  for(let i=0;i<numberOfStories-1;i++){
+    let story = JSON.parse(localStorage.getItem(`savestory${i}`)); //converting from string to JS object again; we initially converted to a string (line 15) so need to change it back
+    let a = document.createElement("a"); //creating anchor tag
+    a.setAttribute("href",`story.html?storyId=savestory${i}`); //setting link for anchor tag
+    a.innerHTML = `<h4>${story.title}</h4>` //setting the text as the story title 
+
+    showArchives.append(a) //adding all of the links inside of the initially empty div tag
+  }
+})

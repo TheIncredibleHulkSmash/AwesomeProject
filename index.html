@@ -38,11 +38,19 @@
           quick, it's fun, and an easy way to get some laughs in. Are you ready
           to Madlib?
         </p>
-
-        <button class="button large" id="buttonStart">
-          Make my own MadLib
-        </button>
+        <div class="container buttonRow">
+          <button class="button large" id="buttonStart">
+            Make my own MadLib
+          </button>
+          <!-- Show Story Button -->
+          <button class="button large" id="showStory">
+            Show Story Archives
+          </button>
+        </div>
       </div>
+
+      <!-- Displays Story History -->
+      <div class="showArchives"></div>
 
       <!-- blanks containing inputs to enter into story -->
       <div id="inputBox">
@@ -59,11 +67,11 @@
 
       <div id="completedMadlibBox">
         <div class="container row">
-          <div id="card" class="card">
+          <div id="card" class="storyContainer">
             <!-- Story titles -->
-            <div class="madlibTitle text card-divider"></div>
+            <div class="madlibTitle text"></div>
             <!-- Story text -->
-            <div class="madlibText card-section"></div>
+            <div class="madlibText"></div>
           </div>
           <!-- <div class="columns small-6 minContainer">
           <img id="wordCloud1" /></div> -->
@@ -76,7 +84,9 @@
         </div>
       </div>
     </main>
-    <footer></footer>
+    <footer>
+     
+    </footer>
     <script
       src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
       integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
