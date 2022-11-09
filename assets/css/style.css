@@ -25,3 +25,18 @@
 #inputBox {
   text-align: center;
 }
+
+/* hides bullet points for input */
+#inputs{
+  list-style-type: none;
+}
+
+.storyContainer{
+  max-width: 1136px;
+  margin: 20px auto;
+  text-align: center;
+}
+.returnButton{
+  text-align: center;
+  display: block;
+}
