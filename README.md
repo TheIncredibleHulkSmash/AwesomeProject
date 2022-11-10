@@ -27,6 +27,7 @@ If your README is long, add a table of contents to make it easy for users to fin
 - [License](#license)
 
 ## Installation
+ *If, as a team we want others to be able to work and chnage our files, provide instructions on how to download our file, or how to clone repo, then any extra steps required from that point forward"
 
 What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
@@ -59,6 +60,8 @@ If you used any third-party assets that require attribution, list the creators w
 If you followed tutorials, include links to those here as well.
 
 ## License
+
+MIT licence
 
 (BASED ON PROJCT CONTENT)
 The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).

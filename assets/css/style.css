@@ -1,9 +1,22 @@
+body.grad {
+  background-image: linear-gradient(to right, rgb(243, 95, 231), coral,rgb(241, 207, 207),rgb(243, 152, 167),pink, rgb(86, 207, 244),rgb(246, 231, 193), rgb(240, 240, 93));
+}
+
 #logo {
-  width: 50vw;
+  max-width: 100%;
 }
 
 .thumbnail img {
-  width: 50vw;
+  width: 70vw;
+  
+}
+
+.center {
+  justify-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 68%;
 }
 
 .row {
@@ -22,6 +35,16 @@
   min-width: 50%;
 }
 
+#title {
+  font-size: 5rem;
+  color: blueviolet;
+}
+
+paragraph #welcomeText {
+  font-size: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 #inputBox {
   text-align: center;
 }
@@ -36,10 +59,11 @@
   margin: 20px auto;
   text-align: center;
 }
-.returnButton{
+/*.returnButton{
   text-align: center;
   display: block;
-}
+} */
+
 .bold{
   font-weight: 600;
 }
