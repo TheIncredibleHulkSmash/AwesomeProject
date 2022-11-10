@@ -17,21 +17,22 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
   </head>
-  <body>
+  <body class="grad">
     <main>
-      <div class="media-object align-center">
+       <div class="center">
         <div class="media-object-section">
           <div id="logo" class="thumbnail">
-            <img src="./assets/img/MadlibLogo.webp" />
+            <img src="./assets/img/MadlibLogo.webp" alt="madlib-logo" />
           </div>
         </div>
       </div>
-      <div id="welcomeBox" class="align-center text-center">
-        <h4>Welcome to Madlibs!</h4>
-        <p>
-          Ready to help create a fun, silly story? Madlibs is a word game
-          designed to create interesting tales with your help.
-        </p>
+      <div id="welcomeBox" class="center-align" >
+        
+      <!--<div class="align-center text-center">-->
+        <h4 id="title"><b>Welcome to Madlibs!</b></h4>
+        <p id="welcomeText" class="flow-text">
+        <p>Ready to help create a fun, silly story? Madlibs is a word game
+          designed to create interesting tales with your help.</p>
         <p>
           First, we'll ask you for a series of adjectives, nouns, body parts,
           and other categories of words. Feel free to get as creative as you
@@ -40,16 +41,21 @@
         <p>
           After that, using the words you provided, we'll show you a story! It's
           quick, it's fun, and an easy way to get some laughs in. Are you ready
-          to Madlib?
+          to Madlib? </p>
         </p>
-        <div class="container buttonRow">
-          <button class="button large" id="buttonStart">
+        <div class="container buttonRow"> <!-- Show Story Button -->
+          <a id="buttonStart" class="waves-effect waves-light btn-large">
+            <i class="material-icons right">play_arrow</i>Play Madlib</a>
+          <!--Show Story Archives-->
+          <a id="showStory" class="waves-effect waves-light btn-large">
+            <i class="material-icons right">bookmark</i>Saved Stories</a>
+         <!--<button class="button large" id="buttonStart">
             Make my own MadLib
-          </button>
-          <!-- Show Story Button -->
-          <button class="button large" id="showStory">
-            Show Story Archives
-          </button>
+          </button>-->
+          
+          <!--<button class="button large" id="showStory">
+            
+          </button>-->
         </div>
       </div>
 
@@ -66,7 +72,10 @@
             <img id="wordCloud" />
           </div>
         </div>
-        <button class="button large" id="buttonSubmit">Submit</button>
+        <button id="buttonSubmit" class="btn waves-effect waves-light btn-large " type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+       <!--<button class="button large" id="buttonSubmit">Submit</button>-->
       </div>
 
       <div id="completedMadlibBox">
@@ -81,11 +90,15 @@
           <img id="wordCloud1" /></div> -->
         </div>
         <div class="container buttonRow">
-          <button class="button large" id="buttonHomepage">
+          <a id="buttonHomepage" class="waves-effect waves-light btn-large">
+            <i class="material-icons right">home</i>Homepage</a>
+          <!--<button class="button large" id="buttonHomepage">
             Go to Homepage
-          </button>
-          <button class="button large" id="buttonRestart">Restart Again</button>
-        </div>
+          </button>-->
+          <a id="buttonRestart" class="waves-effect waves-light btn-large">
+            <i class="material-icons right">replay</i>Restart</a>
+         <!--<button class="button large" id="buttonRestart">Restart Again</button>
+        </div>-->
       </div>
     </main>
     <footer></footer>
