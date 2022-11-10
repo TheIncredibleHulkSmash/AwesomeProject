@@ -8,90 +8,92 @@ document.getElementById("completedMadlibBox").style.display = "none";
 
 let wordCloudText = "";
 let completedBlanks = [];
-let playCount = localStorage.length ++;
-  
+let playCount = localStorage.length++;
+
 //save completed Madlib to local storage
 let archiveStory = () => {
-  let savedStory = {title:"",content:""}; //store title and finished story content; is a string
+  let savedStory = { title: "", content: "" }; //store title and finished story content; is a string
   savedStory.title = document.querySelector(".madlibTitle").textContent; //getting the title content
   savedStory.content = document.querySelector(".madlibText").textContent; //getting the story content
-  let playCount = localStorage.length //number of data available in localStorage that has already been stored
-  localStorage.setItem(`savestory${playCount-1}`, JSON.stringify(savedStory)); //saving new story; -1 because since we are storing the blanks, we need to ignore that piece of data 
+  let playCount = localStorage.length; //number of data available in localStorage that has already been stored
+  localStorage.setItem(`savestory${playCount-1}`, JSON.stringify(savedStory)); //saving new story; -1 because since we are storing the blanks, we need to ignore that piece of data
 };
 
-const displayMadlib =  (url) => {
+const displayMadlib = (url) => {
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
 
-  fetch(url).then(function(response){
-    return response.json();
-  }).then(function(data){
-    
-    console.log(data);
-  
-    const inputs = document.querySelector("#inputs");
-    inputs.innerHTML = ''
-    //loops through blanks to create input boxes
-    for (let i = 0; i < data.blanks.length; i++) {
-      const blank = data.blanks[i];
-      const li = document.createElement("li");
-      const input = document.createElement("input");
-      input.setAttribute("id", `blank-${i}`); //adding id to each blank
-      const text = document.createTextNode(blank); //creating text value
-      li.append(text);
-      li.append(input);
-      inputs.append(li); //appending to ul tag
-    }
-  
-    showWordCloud("wordCloud"); //display word cloud at id=wordCloud div
-  
-    //on click submit button code
-    buttonSubmit.style.visibility = "visible"; //show submit button after start button has been clicked
-    buttonSubmit.addEventListener("click", () => {
-      document.getElementById("inputBox").style.display = "none"; //hide input container
-      document.getElementById("completedMadlibBox").style.display = "block";
-  
-      //store each input into completedBlanks array
-      for (let i = 0; i < data.blanks.length; i++) {
-        let completedBlank = document.getElementById(`blank-${i}`).value;
-        completedBlanks.push(completedBlank);
-      }
-  
-      //display updated word cloud
-      document.getElementById(`inputs`).style.display = "none"; //hide input boxes
-      let completedBlanksString = completedBlanks.join(" "); //convert array to string
-      let savedBlanks = localStorage.getItem("savedBlanks"); //pull previously saved blanks
-      savedBlanks += completedBlanksString; //append saved blanks with words inputted for this madlib
-      localStorage.setItem("savedBlanks", savedBlanks); //save updated save blanks in local storage
-      // showWordCloud("wordCloud1"); //display word cloud at id=wordCloud1 div
-  
-      //display completed madlib
-      const madTitle = document.querySelector(".madlibTitle");
-      madTitle.innerHTML = `<h3>${data.title}</h3>`; //display title of madlib
-      //loop through blanks and values to display a string with the completed madlib
-      let story ='';
-      let words = []
+      const inputs = document.querySelector("#inputs");
+      inputs.innerHTML = "";
+      //loops through blanks to create input boxes
       for (let i = 0; i < data.blanks.length; i++) {
         const blank = data.blanks[i];
-        const value = data.value[i];
-        console.log(value);
-        console.log(blank);
-        document.querySelector(
-          ".madlibText"
-        )
-        story += value +  completedBlanks[i] ;
-        words.push(completedBlanks[i])
+        const li = document.createElement("li");
+        const input = document.createElement("input");
+        input.setAttribute("id", `blank-${i}`); //adding id to each blank
+        const text = document.createTextNode(blank); //creating text value
+        li.append(text);
+        li.append(input);
+        inputs.append(li); //appending to ul tag
       }
-     
-      document.querySelector(".madlibText").innerHTML = makeBold(story, words); //add period at the end of madlib
-  
-      archiveStory(playCount); //send this story to local storage
-    });
 
-  })
-    
+      showWordCloud("wordCloud"); //display word cloud at id=wordCloud div
+
+      //on click submit button code
+      buttonSubmit.style.visibility = "visible"; //show submit button after start button has been clicked
+      buttonSubmit.addEventListener("click", () => {
+        document.getElementById("inputBox").style.display = "none"; //hide input container
+        document.getElementById("completedMadlibBox").style.display = "block";
+
+        //store each input into completedBlanks array
+        for (let i = 0; i < data.blanks.length; i++) {
+          let completedBlank = document.getElementById(`blank-${i}`).value;
+          completedBlanks.push(completedBlank);
+        }
+
+        //display updated word cloud
+        document.getElementById(`inputs`).style.display = "none"; //hide input boxes
+        let completedBlanksString = completedBlanks.join(" "); //convert array to string
+        let savedBlanks = localStorage.getItem("savedBlanks"); //pull previously saved blanks
+        savedBlanks += completedBlanksString; //append saved blanks with words inputted for this madlib
+        localStorage.setItem("savedBlanks", savedBlanks); //save updated save blanks in local storage
+        // showWordCloud("wordCloud1"); //display word cloud at id=wordCloud1 div
+
+        //display completed madlib
+        const madTitle = document.querySelector(".madlibTitle");
+        madTitle.innerHTML = `<h3>${data.title}</h3>`; //display title of madlib
+        //loop through blanks and values to display a string with the completed madlib
+        let story = "";
+        let words = [];
+        for (let i = 0; i < data.blanks.length; i++) {
+          const blank = data.blanks[i];
+          const value = data.value[i];
+          console.log(value);
+          console.log(blank);
+          document.querySelector(".madlibText");
+          story += value + completedBlanks[i];
+          words.push(completedBlanks[i]);
+        }
+        document.querySelector(".madlibText").innerHTML = makeBold(
+          story,
+          words
+        ); //make inputs bold in final madlib
+        document.querySelector(".madlibText").innerHTML += "."; //add period at the end of madlib
+
+        archiveStory(playCount); //send this story to local storage
+      });
+    });
 };
-// this function takes the string story and the words and searches the patterns and bolds the words the in the array. 
-function makeBold(story, words){
-  return story.replace(new RegExp('(\\b)('+ words.join('|')+'()\\b)','ig'), '$1<b>$2</b>$3')
+// this function takes the string story and the words and searches the patterns and bolds the words the in the array.
+function makeBold(story, words) {
+  return story.replace(
+    new RegExp("(\\b)(" + words.join("|") + "()\\b)", "ig"),
+    "$1<b>$2</b>$3"
+  );
 }
 
 //word cloud
@@ -107,7 +109,9 @@ let showWordCloud = (id) => {
       accept: "application/json",
     },
     body: JSON.stringify({
-      text: wordCloudText?wordCloudText:"animal man run let talk beautiful dance", //ternary operator -> if there is no data, execute after ?; if there is data, display worldCloudText
+      text: wordCloudText
+        ? wordCloudText
+        : "animal man run let talk beautiful dance", //ternary operator -> if there is no data, execute after ?; if there is data, display worldCloudText
       scale: 1,
       width: 800,
       height: 800,
@@ -138,37 +142,38 @@ const buttonStart = document.querySelector("#buttonStart");
 buttonStart.addEventListener("click", () => {
   displayMadlib(api_url);
   document.getElementById("welcomeBox").style.display = "none";
+  document.getElementById("showArchivesBox").style.display = "none";
+  document.getElementById("inputBox").style.display = "block";
+  document.getElementById("inputs").style.display = "block";
 });
 
 const buttonHomepage = document.getElementById("buttonHomepage");
 buttonHomepage.addEventListener("click", () => {
-  console.log("homepage button click working");
-  document.getElementById("welcomeBox").style.display = "block";
-  document.getElementById("completedMadlibBox").style.display = "none";
+  location.reload();
 });
 
 const buttonRestart = document.getElementById("buttonRestart");
 buttonRestart.addEventListener("click", () => {
   console.log("restart button click working");
   displayMadlib(api_url);
-  document.querySelector("#completedMadlibBox").style.display = "none";
-  document.querySelector("#inputBox").style.display = "block";
+  document.getElementById("completedMadlibBox").style.display = "none";
+  document.getElementById("inputBox").style.display = "block";
   document.getElementById("inputs").style.display = "block";
-  // buttonRestart.style.display = "none";
-  // buttonHomepage.style.display = "none";
 });
 
-const showStoryButton = document.getElementById("showStory") //selecting showStory button in HTML
+const showStoryButton = document.getElementById("showStory"); //selecting showStory button in HTML
 const showArchives = document.querySelector(".showArchives"); //empty div where we're displaying the previously played story titles and links
 
-showStoryButton.addEventListener("click",()=>{
+showStoryButton.addEventListener("click", () => {
+  document.getElementById("showArchivesBox").style.display = "block";
+
   let numberOfStories = localStorage.length; //getting number of stories already available in local Storage
-  for(let i=0;i<numberOfStories-1;i++){
+  for (let i = 0; i < numberOfStories-1; i++) {
     let story = JSON.parse(localStorage.getItem(`savestory${i}`)); //converting from string to JS object again; we initially converted to a string (line 15) so need to change it back
     let a = document.createElement("a"); //creating anchor tag
-    a.setAttribute("href",`story.html?storyId=savestory${i}`); //setting link for anchor tag
-    a.innerHTML = `<h4>${story.title}</h4>` //setting the text as the story title 
+    a.setAttribute("href", `story.html?storyId=savestory${i}`); //setting link for anchor tag
+    a.innerHTML = `<h4>${story.title}</h4>`; //setting the text as the story title
 
-    showArchives.append(a) //adding all of the links inside of the initially empty div tag
+    showArchives.append(a); //adding all of the links inside of the initially empty div tag
   }
-})
+});
