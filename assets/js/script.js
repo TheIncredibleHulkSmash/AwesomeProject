@@ -19,64 +19,80 @@ let archiveStory = () => {
   localStorage.setItem(`savestory${playCount-1}`, JSON.stringify(savedStory)); //saving new story; -1 because since we are storing the blanks, we need to ignore that piece of data 
 };
 
-const displayMadlib = async (url) => {
-  const response = await fetch(url); //store response
-  let data = await response.json(); //convert response to JSON
-  console.log(data);
+const displayMadlib =  (url) => {
 
-  const inputs = document.querySelector("#inputs");
-  //loops through blanks to create input boxes
-  for (let i = 0; i < data.blanks.length; i++) {
-    const blank = data.blanks[i];
-    const li = document.createElement("li");
-    const input = document.createElement("input");
-    input.setAttribute("id", `blank-${i}`); //adding id to each blank
-    const text = document.createTextNode(blank); //creating text value
-    li.append(text);
-    li.append(input);
-    inputs.append(li); //appending to ul tag
-  }
-
-  showWordCloud("wordCloud"); //display word cloud at id=wordCloud div
-
-  //on click submit button code
-  buttonSubmit.style.visibility = "visible"; //show submit button after start button has been clicked
-  buttonSubmit.addEventListener("click", () => {
-    document.getElementById("inputBox").style.display = "none"; //hide input container
-    document.getElementById("completedMadlibBox").style.display = "block";
-
-    //store each input into completedBlanks array
-    for (let i = 0; i < data.blanks.length; i++) {
-      let completedBlank = document.getElementById(`blank-${i}`).value;
-      completedBlanks.push(completedBlank);
-    }
-
-    //display updated word cloud
-    document.getElementById(`inputs`).style.display = "none"; //hide input boxes
-    let completedBlanksString = completedBlanks.join(" "); //convert array to string
-    let savedBlanks = localStorage.getItem("savedBlanks"); //pull previously saved blanks
-    savedBlanks += completedBlanksString; //append saved blanks with words inputted for this madlib
-    localStorage.setItem("savedBlanks", savedBlanks); //save updated save blanks in local storage
-    // showWordCloud("wordCloud1"); //display word cloud at id=wordCloud1 div
-
-    //display completed madlib
-    const madTitle = document.querySelector(".madlibTitle");
-    madTitle.innerHTML = `<h3>${data.title}</h3>`; //display title of madlib
-    //loop through blanks and values to display a string with the completed madlib
+  fetch(url).then(function(response){
+    return response.json();
+  }).then(function(data){
+    
+    console.log(data);
+  
+    const inputs = document.querySelector("#inputs");
+    inputs.innerHTML = ''
+    //loops through blanks to create input boxes
     for (let i = 0; i < data.blanks.length; i++) {
       const blank = data.blanks[i];
-      const value = data.value[i];
-      console.log(value);
-      console.log(blank);
-      document.querySelector(
-        ".madlibText"
-      ).innerHTML += `${value} <b>${completedBlanks[i]}</b>`;
+      const li = document.createElement("li");
+      const input = document.createElement("input");
+      input.setAttribute("id", `blank-${i}`); //adding id to each blank
+      const text = document.createTextNode(blank); //creating text value
+      li.append(text);
+      li.append(input);
+      inputs.append(li); //appending to ul tag
     }
-    document.querySelector(".madlibText").textContent += "."; //add period at the end of madlib
+  
+    showWordCloud("wordCloud"); //display word cloud at id=wordCloud div
+  
+    //on click submit button code
+    buttonSubmit.style.visibility = "visible"; //show submit button after start button has been clicked
+    buttonSubmit.addEventListener("click", () => {
+      document.getElementById("inputBox").style.display = "none"; //hide input container
+      document.getElementById("completedMadlibBox").style.display = "block";
+  
+      //store each input into completedBlanks array
+      for (let i = 0; i < data.blanks.length; i++) {
+        let completedBlank = document.getElementById(`blank-${i}`).value;
+        completedBlanks.push(completedBlank);
+      }
+  
+      //display updated word cloud
+      document.getElementById(`inputs`).style.display = "none"; //hide input boxes
+      let completedBlanksString = completedBlanks.join(" "); //convert array to string
+      let savedBlanks = localStorage.getItem("savedBlanks"); //pull previously saved blanks
+      savedBlanks += completedBlanksString; //append saved blanks with words inputted for this madlib
+      localStorage.setItem("savedBlanks", savedBlanks); //save updated save blanks in local storage
+      // showWordCloud("wordCloud1"); //display word cloud at id=wordCloud1 div
+  
+      //display completed madlib
+      const madTitle = document.querySelector(".madlibTitle");
+      madTitle.innerHTML = `<h3>${data.title}</h3>`; //display title of madlib
+      //loop through blanks and values to display a string with the completed madlib
+      let story ='';
+      let words = []
+      for (let i = 0; i < data.blanks.length; i++) {
+        const blank = data.blanks[i];
+        const value = data.value[i];
+        console.log(value);
+        console.log(blank);
+        document.querySelector(
+          ".madlibText"
+        )
+        story += value +  completedBlanks[i] ;
+        words.push(completedBlanks[i])
+      }
+     
+      document.querySelector(".madlibText").innerHTML = makeBold(story, words); //add period at the end of madlib
+  
+      archiveStory(playCount); //send this story to local storage
+    });
 
-    archiveStory(playCount); //send this story to local storage
-  });
+  })
+    
 };
+// this function takes the string story and the words and searches the patterns and bolds the words the in the array. 
+function makeBold(story, words){
+  return story.replace(new RegExp('(\\b)('+ words.join('|')+'()\\b)','ig'), '$1<b>$2</b>$3')
+}
 
 //word cloud
 let showWordCloud = (id) => {
@@ -135,6 +151,9 @@ const buttonRestart = document.getElementById("buttonRestart");
 buttonRestart.addEventListener("click", () => {
   console.log("restart button click working");
   displayMadlib(api_url);
+  document.querySelector("#completedMadlibBox").style.display = "none";
+  document.querySelector("#inputBox").style.display = "block";
+  document.getElementById("inputs").style.display = "block";
   // buttonRestart.style.display = "none";
   // buttonHomepage.style.display = "none";
 });
