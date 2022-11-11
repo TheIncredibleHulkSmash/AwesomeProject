@@ -8,7 +8,7 @@ document.getElementById("completedMadlibBox").style.display = "none";
 
 let wordCloudText = "";
 let completedBlanks = [];
-let playCount = localStorage.length++;
+// let playCount = localStorage.length++;
 
 //save completed Madlib to local storage
 let archiveStory = () => {
@@ -16,7 +16,7 @@ let archiveStory = () => {
   savedStory.title = document.querySelector(".madlibTitle").textContent; //getting the title content
   savedStory.content = document.querySelector(".madlibText").textContent; //getting the story content
   let playCount = localStorage.length; //number of data available in localStorage that has already been stored
-  localStorage.setItem(`savestory${playCount-1}`, JSON.stringify(savedStory)); //saving new story; -1 because since we are storing the blanks, we need to ignore that piece of data
+  localStorage.setItem(`savestory${playCount - 1}`, JSON.stringify(savedStory)); //saving new story; -1 because since we are storing the blanks, we need to ignore that piece of data
 };
 
 const displayMadlib = (url) => {
@@ -84,7 +84,7 @@ const displayMadlib = (url) => {
         ); //make inputs bold in final madlib
         document.querySelector(".madlibText").innerHTML += "."; //add period at the end of madlib
 
-        archiveStory(playCount); //send this story to local storage
+        archiveStory(); //send this story to local storage
       });
     });
 };
@@ -109,9 +109,10 @@ let showWordCloud = (id) => {
       accept: "application/json",
     },
     body: JSON.stringify({
-      text: wordCloudText
-        ? wordCloudText
-        : "animal man run let talk beautiful dance", //ternary operator -> if there is no data, execute after ?; if there is data, display worldCloudText
+      text:
+        wordCloudText && wordCloudText !== null
+          ? wordCloudText
+          : "animal man run let talk beautiful dance", //ternary operator -> if there is no data, execute after ?; if there is data, display worldCloudText
       scale: 1,
       width: 800,
       height: 800,
@@ -153,12 +154,15 @@ buttonHomepage.addEventListener("click", () => {
 });
 
 const buttonRestart = document.getElementById("buttonRestart");
-buttonRestart.addEventListener("click", () => {
+buttonRestart.addEventListener("click", async () => {
   console.log("restart button click working");
-  displayMadlib(api_url);
-  document.getElementById("completedMadlibBox").style.display = "none";
-  document.getElementById("inputBox").style.display = "block";
-  document.getElementById("inputs").style.display = "block";
+  location.reload();
+  onload = () => {
+    displayMadlib(api_url);
+    document.getElementById("completedMadlibBox").style.display = "none";
+    document.getElementById("inputBox").style.display = "block";
+    document.getElementById("inputs").style.display = "block";
+  };
 });
 
 const showStoryButton = document.getElementById("showStory"); //selecting showStory button in HTML
@@ -168,7 +172,7 @@ showStoryButton.addEventListener("click", () => {
   document.getElementById("showArchivesBox").style.display = "block";
 
   let numberOfStories = localStorage.length; //getting number of stories already available in local Storage
-  for (let i = 0; i < numberOfStories-1; i++) {
+  for (let i = 0; i < numberOfStories - 1; i++) {
     let story = JSON.parse(localStorage.getItem(`savestory${i}`)); //converting from string to JS object again; we initially converted to a string (line 15) so need to change it back
     let a = document.createElement("a"); //creating anchor tag
     a.setAttribute("href", `story.html?storyId=savestory${i}`); //setting link for anchor tag
