@@ -12,3 +12,8 @@ let content = document.querySelector(".madlibText");
 //putting the data into the div tags so that the user can actually see the title and content
 title.innerHTML = data.title;
 content.innerHTML = data.content;
+
+const buttonHomepage = document.getElementById("buttonHomepage");
+buttonHomepage.addEventListener("click", () => {
+  window.location.href = "./index.html";
+});
