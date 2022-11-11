@@ -40,9 +40,9 @@ body.grad {
   color: blueviolet;
 }
 
-paragraph #welcomeText {
-  font-size: 20px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+#welcomeBox {
+  font-size: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #inputBox {
