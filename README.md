@@ -1,4 +1,4 @@
-# <Your-Project-Title>
+# <Random-Madlib>
 
 ## Description
 
@@ -14,7 +14,7 @@ This project was built to add a twist of freshness, mystery, and uniqueness to a
 The Madlib game provides a dynamic and unique experience. It's purpose lies in entertaining its users and carrying them through a fun journey where word-play and mysterie leads to a story unlike any other, and that it's sure to surprise! Perhaps even provide some laughter and guaranteed silly fun. 
 
 - What did you learn?
-We learned having the right data and the resources that work best to meet the overall objective was key in the making of this Madlib game. But this experience applies to future projects as well. HAving gone through a fair share of challenges taught us about functionallity, problem solving, delegation, assistance, leadership and 
+We learned having the right data and the resources that work best to meet the overall objective was key in the making of this Madlib game. But this experience applies to future projects as well. HAving gone through a fair share of challenges taught us about functionallity, problem solving, delegation, and assistance. These challenges also enhanced our collaboration, communication and teamwork to meet deadlines accordingly.
 
 
 ## Installation
