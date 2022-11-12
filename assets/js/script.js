@@ -40,6 +40,10 @@ const displayMadlib = (url) => {
         const text = document.createTextNode(blank); //creating text value
         li.append(text);
         li.append(input);
+        li.style.backgroundColor = "white";
+        li.style.borderRadius = "2rem";
+        li.style.padding = "25px";
+        li.style.margin = "5px";
         inputs.append(li); //appending to ul tag
       }
 
@@ -106,8 +110,8 @@ buttonStart.addEventListener("click", () => {
   displayMadlib(api_url);
   document.getElementById("welcomeBox").style.display = "none";
   document.getElementById("showArchivesBox").style.display = "none";
-  document.getElementById("inputBox").style.display = "block";
-  document.getElementById("inputs").style.display = "block";
+  document.getElementById("inputBox").style.display = "flex";
+  document.getElementById("inputs").style.display = "flex";
 });
 
 const buttonHomepage = document.getElementById("buttonHomepage");
@@ -120,12 +124,15 @@ buttonRestart.addEventListener("click", async () => {
   console.log("restart button click working");
   displayMadlib(api_url);
   document.getElementById("completedMadlibBox").style.display = "none";
-  document.getElementById("inputBox").style.display = "block";
-  document.getElementById("inputs").style.display = "block";
+  document.getElementById("inputBox").style.display = "flex";
+  document.getElementById("inputs").style.display = "flex";
+  document.getElementById("buttonSubmit").style.display = "inline"; //hide input container
+
 });
 
 buttonSubmit.addEventListener("click", () => {
   document.getElementById("inputBox").style.display = "none"; //hide input container
+  document.getElementById("buttonSubmit").style.display = "none"; //hide input container
   document.getElementById("completedMadlibBox").style.display = "block";
   console.log(globalData.blanks);
   //store each input into completedBlanks array
