@@ -40,7 +40,7 @@ const displayMadlib = (url) => {
         const text = document.createTextNode(blank); //creating text value
         li.append(text);
         li.append(input);
-        li.style.backgroundColor = "white";
+        li.style.backgroundColor = "thistle";
         li.style.borderRadius = "2rem";
         li.style.padding = "25px";
         li.style.margin = "5px";

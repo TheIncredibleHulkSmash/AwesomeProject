@@ -20,3 +20,6 @@ body.grad {
     width: 68%;
   }
   
+  #buttonHomepage {
+    border-radius: 8px;
+  }

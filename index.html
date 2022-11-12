@@ -10,35 +10,30 @@
     <!--Import Google Icon Font-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
     <!-- Compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
   </head>
   <body class="grad">
     <main>
        <div class="center">
         <div class="media-object-section">
           <div id="logo" class="thumbnail">
-            <img src="./assets/img/MadlibLogo.webp" alt="madlib-logo" />
+            <img class="responsive-img" src="./assets/img/MadlibLogo.webp" alt="madlib-logo" />
           </div>
         </div>
       </div>
-      <div id="welcomeBox" class="center-align" >
-        
-      <!--<div class="align-center text-center">-->
+      <section id="welcomeBox" class="center-align">
+        <div class="col s12 m4 l2"></div>
         <h4 id="title"><b>Welcome to Madlibs!</b></h4>
         <p id="welcomeText" class="flow-text">
-        <p>Ready to help create a fun, silly story? Madlibs is a word game
+        <p>
+          Ready to help create a fun, silly story? Madlibs is a word game
           designed to create interesting tales with your help.</p>
         <p>
           First, we'll ask you for a series of adjectives, nouns, body parts,
           and other categories of words. Feel free to get as creative as you
-          want - the more random the better!
-        </p>
+          want - the more random the better! </p>
         <p>
           After that, using the words you provided, we'll show you a story! It's
           quick, it's fun, and an easy way to get some laughs in. Are you ready
@@ -47,7 +42,7 @@
         <div class="container buttonRow"> <!-- Show Story Button -->
           <a id="buttonStart" class="waves-effect lime accent-4 btn-large">
             <i class="material-icons right">play_arrow</i>Play Madlib</a>
-          <!--Show Story Archives-->
+          <!--Show Story Archives/ Button-->
           <a id="showStory" class="waves-effect amber darken-4 btn-large">
             <i class="material-icons right">bookmark</i>Saved Stories</a>
          <!--<button class="button large" id="buttonStart">
@@ -59,6 +54,7 @@
           </button>-->
         </div>
       </div>
+      </section>
       <!-- Displays Story History -->
       <div id="showArchivesBox" class="showArchives"></div>
 
@@ -68,9 +64,9 @@
             <ul id="inputs"></ul>
           </div>
           <div class="">
-            <img id="wordCloud" />
+            <img id="wordCloud" class="responsive-img"/>
           </div>
-        <!--<button class="button large" id="buttonSubmit">Submit</button>-->
+        <!--<Submit/button-->
       </div>
       <div class="center">
       <button id="buttonSubmit" class="btn waves-effect cyan accent-2 btn-large" type="submit" name="action">Submit
@@ -86,8 +82,8 @@
             <div class="madlibText"></div>
             <div class="bold"></div>
           </div>
-          <!-- <div class="columns small-6 minContainer">
-          <img id="wordCloud1" /></div> -->
+    
+          <!--<img id="wordCloud1" /></div> -->
         </div>
         <div class="container buttonRow">
           <a id="buttonHomepage" class="waves-effect purple accent-2 btn-large">
@@ -105,8 +101,7 @@
     <script
       src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
       integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/script.js"></script>

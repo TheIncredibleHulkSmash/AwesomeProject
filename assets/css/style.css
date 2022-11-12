@@ -102,5 +102,25 @@ buttonRow {
 
 .bold {
   font-weight: 900;
-  color: yellow;
+  
+}
+
+#buttonStart {
+  border-radius: 8px;
+}
+
+#showStory {
+  border-radius: 8px;
+}
+
+#buttonSubmit {
+  border-radius: 8px;
+}
+ 
+#buttonRestart {
+  border-radius: 8px;
+}
+
+#buttonHomepage{
+  border-radius: 8px;
 }
