@@ -55,6 +55,7 @@ body.grad {
 
 #inputBox {
   text-align: center;
+  font-weight: 500;
 }
 
 /* hides bullet points for input */
@@ -66,29 +67,26 @@ body.grad {
 
 #completedMadlibBox {
   font-size: 30px;
-  font-weight: 600;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
-#completedmadlibBox madlibTitle {
-  font-size: larger;
-  font-weight: 800;
-}
-.madlibText {
-  text-shadow: 2px 2px yellow;
-}
-
-
 .storyContainer{
   max-width: 1136px;
   margin: 20px auto;
   text-align: center;
+  font-size: 2rem;
+}
+#card .madlibTitle {
+  color: deeppink;
+  size: 3rem;
+
 }
 /*.returnButton{
   text-align: center;
   display: block;
 } */
 
-.bold{
-  font-weight: 600;
+.bold {
+  font-weight: 900;
+  color: yellow;
 }
