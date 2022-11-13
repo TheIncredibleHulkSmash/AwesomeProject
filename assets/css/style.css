@@ -1,15 +1,13 @@
 body.grad {
-  background-image: linear-gradient(
-    to right,
-    rgb(243, 95, 231),
-    coral,
-    rgb(241, 207, 207),
-    rgb(243, 152, 167),
-    pink,
-    rgb(86, 207, 244),
-    rgb(246, 231, 193),
-    rgb(240, 240, 93)
-  );
+  background-image: linear-gradient(to right,
+      rgb(243, 95, 231),
+      coral,
+      rgb(241, 207, 207),
+      rgb(243, 152, 167),
+      pink,
+      rgb(86, 207, 244),
+      rgb(246, 231, 193),
+      rgb(240, 240, 93));
 }
 
 #logo {
@@ -58,6 +56,7 @@ body.grad {
     "Lucida Sans", Arial, sans-serif;
   text-shadow: 2px 2px whitesmoke;
 }
+
 .container,
 buttonRow {
   text-shadow: none;
@@ -85,16 +84,19 @@ buttonRow {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
+
 .storyContainer {
   max-width: 1136px;
   margin: 20px auto;
   text-align: center;
   font-size: 2rem;
 }
+
 #card .madlibTitle {
   color: deeppink;
   size: 3rem;
 }
+
 /*.returnButton{
   text-align: center;
   display: block;
@@ -102,7 +104,7 @@ buttonRow {
 
 .bold {
   font-weight: 900;
-  
+
 }
 
 #buttonStart {
@@ -116,11 +118,27 @@ buttonRow {
 #buttonSubmit {
   border-radius: 8px;
 }
- 
+
 #buttonRestart {
   border-radius: 8px;
 }
 
-#buttonHomepage{
+#buttonHomepage {
   border-radius: 8px;
+}
+
+.custom-class {
+  display: inline-flex;
+  margin: 10px;
+  padding: 10px;
+
+}
+
+
+h4 {
+  color: white;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: coral;
 }

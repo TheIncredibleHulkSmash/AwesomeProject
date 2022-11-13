@@ -186,8 +186,8 @@ showStoryButton.addEventListener("click", () => {
     let story = JSON.parse(localStorage.getItem(`savestory${i}`)); //converting from string to JS object again; we initially converted to a string (line 15) so need to change it back
     let a = document.createElement("a"); //creating anchor tag
     a.setAttribute("href", `story.html?storyId=savestory${i}`); //setting link for anchor tag
+    a.className = "custom-class"; // added class name to style it in the css
     a.innerHTML = `<h4>${story.title}</h4>`; //setting the text as the story title
-
     showArchives.append(a); //adding all of the links inside of the initially empty div tag
   }
 });
