@@ -97,16 +97,27 @@ buttonRow {
   size: 3rem;
 }
 
-/*.returnButton{
-  text-align: center;
-  display: block;
-} */
-
 .bold {
   font-weight: 900;
+}
+
+.custom-class {
+  display: inline-flex;
+  margin: 10px;
+  padding: 10px;
 
 }
 
+h4 {
+  color: white;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: coral;
+}
+
+
+/* button radius styling */
 #buttonStart {
   border-radius: 8px;
 }
@@ -127,18 +138,25 @@ buttonRow {
   border-radius: 8px;
 }
 
-.custom-class {
-  display: inline-flex;
-  margin: 10px;
-  padding: 10px;
+
+
+/* Media query from materialize class .s and .l */
+@media screen and (max-width <= 600px){
+  main {
+width: 50%;
+  } 
+  #wordCloud img {
+    width: 50%;
+    size-adjust: 40%;
+    grid-auto-columns: min-content;
+
+  }
 
 }
 
-
-h4 {
-  color: white;
-  font-weight: 500;
-  border-radius: 20px;
-  padding: 10px;
-  background-color: coral;
+@media screen and (max-width >992px){
+  main {
+    width: 90%;
+  }
+  
 }
