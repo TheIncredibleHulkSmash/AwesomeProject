@@ -10,7 +10,7 @@ let title = document.querySelector(".madlibTitle");
 let content = document.querySelector(".madlibText");
 
 //putting the data into the div tags so that the user can actually see the title and content
-title.innerHTML = data.title;
+title.innerHTML = `<h3>${data.title}</h3>`;
 content.innerHTML = data.content;
 
 const buttonHomepage = document.getElementById("buttonHomepage");
