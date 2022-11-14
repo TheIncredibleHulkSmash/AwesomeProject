@@ -34,6 +34,10 @@ Happy Coding!
 
 ## Usage
 
+Random Madlib page:
+https://theincrediblehulksmash.github.io/RandomMadlib/
+
+
 ![alt text](/assets/img/randomMadlib%20screenshot.png)
 
 ## Credits
