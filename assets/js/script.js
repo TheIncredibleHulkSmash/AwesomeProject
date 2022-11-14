@@ -80,7 +80,7 @@ let showWordCloud = (id) => {
       text:
         wordCloudText && wordCloudText !== null
           ? wordCloudText
-          : "animal man run let talk beautiful dance", //ternary operator -> if there is no data, execute after ?; if there is data, display worldCloudText
+          : "animal man run let talk beautiful dance big happy ate unique scrupulous mischevous mysterious honor colorful prickly lamp brick phone mouse paper couch building", //ternary operator -> if there is no data, execute after ?; if there is data, display worldCloudText
       scale: 1,
       width: 800,
       height: 800,
