@@ -1,110 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Make Your Own Madlib</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/materialize.css">
-    <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"/>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
-  </head>
-  <body class="grad">
-    <main>
-       <div class="center">
-        <div class="media-object-section">
-          <div id="logo" class="thumbnail">
-            <img class="responsive-img" src="./assets/img/MadlibLogo.webp" alt="madlib-logo" />
-          </div>
-        </div>
-      </div>
-      <section id="welcomeBox" class="center-align">
-        <div class="col s12 m4 l2"></div>
-        <h4 id="title"><b>Welcome to Madlibs!</b></h4>
-        <p id="welcomeText" class="flow-text">
-        <p>
-          Ready to help create a fun, silly story? Madlibs is a word game
-          designed to create interesting tales with your help.</p>
-        <p>
-          First, we'll ask you for a series of adjectives, nouns, body parts,
-          and other categories of words. Feel free to get as creative as you
-          want - the more random the better! </p>
-        <p>
-          After that, using the words you provided, we'll show you a story! It's
-          quick, it's fun, and an easy way to get some laughs in. Are you ready
-          to Madlib? </p>
-        </p>
-        <div class="container buttonRow"> <!-- Show Story Button -->
-          <a id="buttonStart" class="waves-effect lime accent-4 btn-large">
-            <i class="material-icons right">play_arrow</i>Play Madlib</a>
-          <!--Show Story Archives/ Button-->
-          <a id="showStory" class="waves-effect amber darken-4 btn-large">
-            <i class="material-icons right">bookmark</i>Saved Stories</a>
-         <!--<button class="button large" id="buttonStart">
-            Make my own MadLib
-          </button>-->
-          
-          <!--<button class="button large" id="showStory">
-            
-          </button>-->
-        </div>
-      </div>
-      </section>
-      <!-- Displays Story History -->
-      <div id="showArchivesBox" class="showArchives"></div>
 
-      <!-- blanks containing inputs to enter into story -->
-      <div id="inputBox">
-          <div class="">
-            <ul id="inputs"></ul>
-          </div>
-          <div class="">
-            <img id="wordCloud" class="responsive-img"/>
-          </div>
-        <!--<Submit/button-->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Make Your Own Madlib</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/materialize.css">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+</head>
+
+<body class="grad">
+  <main>
+    <div class="center">
+      <div class="media-object-section">
+        <div id="logo" class="thumbnail">
+          <img class="responsive-img" src="./assets/img/MadlibLogo.webp" alt="madlib-logo" />
+        </div>
       </div>
-      <div class="center">
+    </div>
+    <section id="welcomeBox" class="center-align">
+      <div class="col s12 m4 l2"></div>
+      <h4 id="title"><b>Welcome to Madlibs!</b></h4>
+      <p id="welcomeText" class="flow-text">
+      <p>
+        Ready to help create a fun, silly story? Madlibs is a word game
+        designed to create interesting tales with your help.</p>
+      <p>
+        First, we'll ask you for a series of adjectives, nouns, body parts,
+        and other categories of words. Feel free to get as creative as you
+        want - the more random the better! </p>
+      <p>
+        After that, using the words you provided, we'll show you a story! It's
+        quick, it's fun, and an easy way to get some laughs in. Are you ready
+        to Madlib? </p>
+      </p>
+      <div class="container buttonRow">
+        <!-- Show Story Button -->
+        <a id="buttonStart" class="waves-effect lime accent-4 btn-large">
+          <i class="material-icons right">play_arrow</i>Play Madlib</a>
+        <!--Show Story Archives/ Button-->
+        <a id="showStory" class="waves-effect amber darken-4 btn-large">
+          <i class="material-icons right">bookmark</i>Saved Stories</a>
+
+      </div>
+      </div>
+    </section>
+    <!-- Displays Story History -->
+    <div id="showArchivesBox" class="showArchives"></div>
+
+    <!-- blanks containing inputs to enter into story -->
+    <div id="inputBox">
+      <div class="">
+        <ul id="inputs"></ul>
+      </div>
+      <div class="">
+        <img id="wordCloud" class="responsive-img" />
+      </div>
+      <!--<Submit/button-->
+    </div>
+    <div class="center">
       <button id="buttonSubmit" class="btn waves-effect cyan accent-2 btn-large" type="submit" name="action">Submit
         <i class="material-icons right">send</i>
-      </button></div>
-      
-      <div id="completedMadlibBox">
-        <div class="container row">
-          <div id="card" class="storyContainer">
-            <!-- Story titles -->
-            <div class="madlibTitle"></div>
-            <!-- Story text -->
-            <div class="madlibText"></div>
-            <div class="bold"></div>
-          </div>
-    
-          <!--<img id="wordCloud1" /></div> -->
+      </button>
+    </div>
+
+    <div id="completedMadlibBox">
+      <div class="container row">
+        <div id="card" class="storyContainer">
+          <!-- Story titles -->
+          <div class="madlibTitle"></div>
+          <!-- Story text -->
+          <div class="madlibText"></div>
+          <div class="bold"></div>
         </div>
-        <div class="container buttonRow">
-          <a id="buttonHomepage" class="waves-effect purple accent-2 btn-large">
-            <i class="material-icons right">home</i>Homepage</a>
-          <!--<button class="button large" id="buttonHomepage">
-            Go to Homepage
-          </button>-->
-          <a id="buttonRestart" class="waves-effect teal accent-3 btn-large">
-            <i class="material-icons right">replay</i>Restart</a>
-         <!--<button class="button large" id="buttonRestart">Restart Again</button>
-        </div>-->
+
       </div>
-    </main>
-    <footer>
-    </footer>
-    <script
-      src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
-      integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
-      crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
+      <div class="container buttonRow">
+        <a id="buttonHomepage" class="waves-effect purple accent-2 btn-large">
+          <i class="material-icons right">home</i>Homepage</a>
+
+        <a id="buttonRestart" class="waves-effect teal accent-3 btn-large">
+          <i class="material-icons right">replay</i>Restart</a>
+
+      </div>
+  </main>
+  <footer>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+    integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
