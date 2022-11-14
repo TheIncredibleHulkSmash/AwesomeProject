@@ -181,7 +181,7 @@ const showStoryButton = document.getElementById("showStory"); //selecting showSt
 const showArchives = document.querySelector(".showArchives"); //empty div where we're displaying the previously played story titles and links
 
 showStoryButton.addEventListener("click", () => {
-  document.getElementById("showArchivesBox").style.display = "block";
+  document.getElementById("showArchivesBox").style.display = "flex";
 
   let numberOfStories = localStorage.length; //getting number of stories already available in local Storage
   for (let i = 0; i < numberOfStories - 1; i++) {

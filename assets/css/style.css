@@ -1,13 +1,15 @@
 body.grad {
-  background-image: linear-gradient(to right,
-      rgb(243, 95, 231),
-      coral,
-      rgb(241, 207, 207),
-      rgb(243, 152, 167),
-      pink,
-      rgb(86, 207, 244),
-      rgb(246, 231, 193),
-      rgb(240, 240, 93));
+  background-image: linear-gradient(
+    to right,
+    rgb(243, 95, 231),
+    coral,
+    rgb(241, 207, 207),
+    rgb(243, 152, 167),
+    pink,
+    rgb(86, 207, 244),
+    rgb(246, 231, 193),
+    rgb(240, 240, 93)
+  );
 }
 
 #logo {
@@ -44,7 +46,7 @@ body.grad {
 
 #title {
   font-size: 5rem;
-  color: blueviolet;
+  color: rgb(0, 0, 0);
 }
 
 #welcomeBox {
@@ -105,7 +107,12 @@ buttonRow {
   display: inline-flex;
   margin: 10px;
   padding: 10px;
+}
 
+.showArchives {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 h4 {
@@ -113,9 +120,8 @@ h4 {
   font-weight: 500;
   border-radius: 20px;
   padding: 10px;
-  background-color: coral;
+  background-color: rgb(167, 135, 255);
 }
-
 
 /* button radius styling */
 #buttonStart {
@@ -138,25 +144,20 @@ h4 {
   border-radius: 8px;
 }
 
-
-
 /* Media query from materialize class .s and .l */
-@media screen and (max-width <= 600px){
+@media screen and (max-width <= 600px) {
   main {
-width: 50%;
-  } 
+    width: 50%;
+  }
   #wordCloud img {
     width: 50%;
     size-adjust: 40%;
     grid-auto-columns: min-content;
-
   }
-
 }
 
-@media screen and (max-width >992px){
+@media screen and (max-width >992px) {
   main {
     width: 90%;
   }
-  
 }
