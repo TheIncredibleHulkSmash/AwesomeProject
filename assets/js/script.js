@@ -4,6 +4,7 @@ const api_url =
 const buttonSubmit = document.querySelector("#buttonSubmit");
 buttonSubmit.style.visibility = "hidden";
 
+document.getElementById("wordCloudBox").style.display = "none";
 document.getElementById("completedMadlibBox").style.display = "none";
 
 let wordCloudText = "";
@@ -64,6 +65,7 @@ function makeBold(story, words) {
 
 //word cloud
 let showWordCloud = (id) => {
+  document.getElementById("wordCloudBox").style.display = "inline"
   wordCloudText = localStorage.getItem("savedBlanks"); //get updated string of blanks to display as a word cloud
   // fetch word cloud API using wordCloudText
   fetch("https://textvis-word-cloud-v1.p.rapidapi.com/v1/textToCloud", {
