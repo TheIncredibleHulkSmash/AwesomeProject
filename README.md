@@ -37,8 +37,11 @@ Happy Coding!
 Random Madlib page:
 https://theincrediblehulksmash.github.io/RandomMadlib/
 
+![alt text](./assets/img/randomMadlib%20screenshot.png)
 
-![alt text](/assets/img/randomMadlib%20screenshot.png)
+## Demo
+
+[![](https://markdown-videos.deta.dev/youtube/4XWcoLKvMU4)](https://youtu.be/4XWcoLKvMU4)
 
 ## Credits
 
