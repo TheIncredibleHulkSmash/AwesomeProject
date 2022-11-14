@@ -20,6 +20,13 @@ body.grad {
     width: 68%;
   }
 
+  .storyContainer {
+    max-width: 1136px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 2rem;
+  }
+
   #card .madlibTitle {
     color: deeppink;
     size: 3rem;
@@ -30,8 +37,6 @@ body.grad {
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
-
-
   
   #buttonHomepage {
     border-radius: 8px;
