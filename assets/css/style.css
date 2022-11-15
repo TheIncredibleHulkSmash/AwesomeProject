@@ -145,9 +145,9 @@ h4 {
 }
 
 /* Media query from materialize class .s and .l */
-@media screen and (max-width <= 600px) {
+@media screen and (max-width <600px) {
   main {
-    width: 50%;
+    width: 30%;
   }
   #wordCloud img {
     width: 50%;
