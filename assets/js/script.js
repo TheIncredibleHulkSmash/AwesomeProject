@@ -144,18 +144,6 @@ buttonSubmit.addEventListener("click", () => {
     completedBlanks.push(completedBlank);
   }
 
-  //display updated word cloud
-  document.getElementById(`inputs`).style.display = "none"; //hide input boxes
-  let completedBlanksString = completedBlanks.join(" "); //convert array to string
-  let savedBlanks = localStorage.getItem("savedBlanks"); //pull previously saved blanks
-  console.log(savedBlanks === null);
-  if (savedBlanks === null) {
-    savedBlanks = "";
-  }
-  savedBlanks += completedBlanksString; //append saved blanks with words inputted for this madlib
-  localStorage.setItem("savedBlanks", savedBlanks); //save updated save blanks in local storage
-  // showWordCloud("wordCloud1"); //display word cloud at id=wordCloud1 div
-
   //display completed madlib
   const madTitle = document.querySelector(".madlibTitle");
   madTitle.innerHTML = `<h3>${globalData.title}</h3>`; //display title of madlib
@@ -175,6 +163,17 @@ buttonSubmit.addEventListener("click", () => {
   document.querySelector(".madlibText").innerHTML += "."; //add period at the end of madlib
 
   archiveStory(); //send this story to local storage
+
+  //display updated word cloud
+  document.getElementById(`inputs`).style.display = "none"; //hide input boxes
+  let completedBlanksString = completedBlanks.join(" "); //convert array to string
+  let savedBlanks = localStorage.getItem("savedBlanks"); //pull previously saved blanks
+  console.log(savedBlanks === null);
+  if (savedBlanks === null) {
+    savedBlanks = "";
+  }
+  savedBlanks += completedBlanksString; //append saved blanks with words inputted for this madlib
+  localStorage.setItem("savedBlanks", savedBlanks); //save updated save blanks in local storage
 });
 
 const showStoryButton = document.getElementById("showStory"); //selecting showStory button in HTML
